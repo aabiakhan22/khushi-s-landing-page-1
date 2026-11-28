@@ -177,6 +177,23 @@ form .btn:hover{background:#25bd63}
 .note{font-size:.8rem;color:var(--muted);text-align:center}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1704023577916223');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1704023577916223&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -341,7 +358,7 @@ form .btn:hover{background:#25bd63}
       <h3>Sharing</h3>
       <p>We do not sell or rent your information. Your enquiry may be shared with iDigitalpreneur only to answer your questions or support your enrolment.</p>
       <h3>WhatsApp and third parties</h3>
-      <p>Messages sent through WhatsApp are subject to WhatsApp’s own terms and privacy policy. This website may also use standard hosting and analytics services that collect basic technical data such as device type and pages visited.</p>
+      <p>Messages sent through WhatsApp are subject to WhatsApp’s own terms and privacy policy. This website uses the Meta (Facebook) Pixel and standard hosting services, which collect basic technical data such as device type and pages visited, and record when you submit the form, so that we can measure and improve our advertising.</p>
       <h3>Your choices</h3>
       <p>You can ask us to delete your details at any time by messaging us on WhatsApp at +91 91056 59369.</p>
       <h3>Children</h3>
@@ -401,6 +418,7 @@ form .btn:hover{background:#25bd63}
       ok=err('profession',!prof?'Please choose your profession.':'')&&ok;
       if(!ok)return;
       var msg="Assalamu Alaikum Khushi, I want to know more about digital skills and freelancing.\n\nName: "+name+"\nPhone: "+phone+"\nCity: "+city+"\nProfession: "+prof;
+      try{if(window.fbq)fbq("track","Lead");}catch(x){}
       window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
       f.reset();if(d.open)d.close();
     });
